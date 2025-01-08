@@ -26,6 +26,7 @@ class AddressAdmin(admin.ModelAdmin):
     )
     ordering= ['-state']
     search_fields = ['state','name']
+    list_per_page = 10
 
 admin.site.register(Address, AddressAdmin)
 
@@ -39,6 +40,7 @@ class ClothesAdmin(admin.ModelAdmin):
     )
     ordering= ['idgroupclothes']
     search_fields= ['idclothes','idgroupclothes__idgroupclothes']
+    list_per_page= 20
 
 admin.site.register(Clothes, ClothesAdmin)
 
@@ -55,6 +57,7 @@ class GroupclothesAdmin(admin.ModelAdmin):
     )
     ordering= ['-idgroupclothes']
     search_fields = ['type','idbrand__name', 'description']
+    list_per_page = 20
 
 admin.site.register(Groupclothes, GroupclothesAdmin)
                     
@@ -67,6 +70,7 @@ class ClientsAdmin(admin.ModelAdmin):
         'typeid',
     )
     search_fields= ['fullname','idclient','email']
+    list_per_page = 10
 
 admin.site.register(Clients, ClientsAdmin)
 
@@ -81,6 +85,7 @@ class SalesAdmin(admin.ModelAdmin):
     )
     ordering= ['-idsale']
     search_fields= ['idclient__idclient','state','idseller']
+    list_per_page = 15
 
 admin.site.register(Sales, SalesAdmin)
 
@@ -93,6 +98,7 @@ class SalesclothesAdmin(admin.ModelAdmin):
     )
     ordering= ['-idsalesclothes']
     search_fields= ['idsalesclothes','idsalesclothes__idsalesclothes']
+    list_per_page = 10
 
 admin.site.register(Salesclothes, SalesclothesAdmin)
 
