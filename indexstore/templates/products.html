@@ -1,6 +1,81 @@
 {% include 'bs5.html' %}
 {% include 'navbar.html' %}
 
-{% include 'filters.html' %}
+<br />
+<button
+  class="btn btn-outline-info float-end"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasTop"
+  aria-controls="offcanvasTop"
+>
+  <i class="bi bi-filter"></i>
+</button>
+
+<div
+  class="offcanvas offcanvas-top"
+  tabindex="-1"
+  id="offcanvasTop"
+  aria-labelledby="offcanvasTopLabel"
+>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasTopLabel">Filtros</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <div class="row g-3">
+      <div class="col-sm-7">
+        <label
+          for="colFormLabelSm"
+          class="col-sm-2 col-form-label col-form-label-sm"
+          >Marca</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Hugo Boss, Kenzo, Lacoste ..."
+          aria-label=""
+        />
+      </div>
+      <div class="col-sm">
+        <label
+          for="colFormLabelSm"
+          class="col-sm-2 col-form-label col-form-label-sm"
+          >Talla</label
+        >
+        <select id="inputState" class="form-select">
+          <option selected>Elige una talla</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+        </select>
+      </div>
+      <div class="col-sm">
+        <label for="exampleColorInput" class="form-label">Color sercano</label>
+        <input
+          type="color"
+          class="form-control form-control-color"
+          id="exampleColorInput"
+          value="#ffffff"
+          title="Choose your color"
+        />
+      </div>
+    </div>
+    <div class="col-sm" data-bs-dismiss="offcanvas">
+      <button type="submit" class="btn btn-success float-end">Buscar</button>
+    </div>
+  </div>
+</div>
+<br />
+<br />
 
 {% include 'footer.html' %}
