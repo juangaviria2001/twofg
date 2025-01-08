@@ -5,7 +5,6 @@ from django.utils.html import format_html
 # Register your models here.
 
 
-
 class BrandsAdmin(admin.ModelAdmin):
     list_display = (
         'idbrand',
