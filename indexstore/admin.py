@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Brands
+from .models import Brands, Address, Clients, Clothes, Groupclothes, Sales, Salesclothes, Sedes
 from django.utils.html import format_html
 
 # Register your models here.
@@ -14,59 +14,97 @@ class BrandsAdmin(admin.ModelAdmin):
     ordering= ['idbrand']
     search_fields = ['name']
 
-admin.site.register(Brands, BrandsAdmin) 
+admin.site.register(Brands, BrandsAdmin)
 
-# class StocksAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'Id_Brands',
-#         'Tipe',
-#         'Name',
-#         'NumberOf',
-#         'Price',
-#         'Foto',
-#         'BarCode',
-#         #RUTA 'Img',
-#         'Sales',
-#     )
-#     def Foto(self, obj):
-#         return format_html('<img src={} width="80" />', obj.Img.url)
-#     ordering= ['Tipe']
-#     search_fields= ['Name','Tipe']
+class AddressAdmin(admin.ModelAdmin):
+    list_display = (
+        'idaddress',
+        'general',
+        'name',
+        'description',
+        'state',
+    )
+    ordering= ['-state']
+    search_fields = ['state','name']
 
-# admin.site.register(Stocks, StocksAdmin)
+admin.site.register(Address, AddressAdmin)
 
-# class InfoStocksAdmin(admin.ModelAdmin):
-#     list_display = (
-#         #'id',
-#         'Barcode_Stocks',
-#         'IDescription',
-#     )
-#     search_fields = ['Barcode_Stocks__BarCode']
+class ClothesAdmin(admin.ModelAdmin):
+    list_display = (
+        'idclothes',
+        'idgroupclothes',
+        'idsede',
+        'size',
+        'color',
+    )
+    ordering= ['idgroupclothes']
+    search_fields= ['idclothes','idgroupclothes__idgroupclothes']
 
-# admin.site.register(InfoStocks, InfoStocksAdmin)
+admin.site.register(Clothes, ClothesAdmin)
+
+class GroupclothesAdmin(admin.ModelAdmin):
+    list_display = (
+        #'idgroupclothes',
+        'idbrand',
+        'type',
+        'description',
+        'price',
+        'discount',
+        'valuediscount',
+        'image',
+    )
+    ordering= ['-idgroupclothes']
+    search_fields = ['type','idbrand__name', 'description']
+
+admin.site.register(Groupclothes, GroupclothesAdmin)
                     
-# class CustomersAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'FullName',
-#         'IdCustomer',
-#         'ContactNumber',
-#         'Email',
-#         'Address',
-#     )
-#     search_fields= ['FullName','IdCustomer','Email']
+class ClientsAdmin(admin.ModelAdmin):
+    list_display = (
+        'idaddress',
+        'fullname',
+        'email',
+        'cellphonenumber',
+        'typeid',
+    )
+    search_fields= ['fullname','idclient','email']
 
-# admin.site.register(Customers, CustomersAdmin)
+admin.site.register(Clients, ClientsAdmin)
 
-# class OrdersAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'Id_Brands',
-#         'Id_Stocks',
-#         'IdCustomer',
-#         'LState',
-#         'NProducts',
-#         'ODescription',
-#     )
-#     ordering= ['id']
-#     search_fields= ['IdCustomer__IdCustomer','Id_Stocks__BarCode','LState']
+class SalesAdmin(admin.ModelAdmin):
+    list_display = (
+        'idsale',
+        'idclient',
+        'idseller',
+        'state',
+        'totalprice',
+        'date',
+    )
+    ordering= ['-idsale']
+    search_fields= ['idclient__idclient','state','idseller']
 
-# admin.site.register(Orders, OrdersAdmin)
+admin.site.register(Sales, SalesAdmin)
+
+class SalesclothesAdmin(admin.ModelAdmin):
+    list_display = (
+        'idsalesclothes',
+        'idclothes',
+        'idsale',
+        'dayprice',
+    )
+    ordering= ['-idsalesclothes']
+    search_fields= ['idsalesclothes','idsalesclothes__idsalesclothes']
+
+admin.site.register(Salesclothes, SalesclothesAdmin)
+
+class SedesAdmin(admin.ModelAdmin):
+    list_display = (
+        'idsede',
+        'name',
+        'address',
+        'unit',
+        'hours',
+    )
+    ordering= ['-idsede']
+    search_fields= ['name','idsede']
+
+admin.site.register(Sedes, SedesAdmin)
