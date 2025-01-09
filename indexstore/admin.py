@@ -52,10 +52,11 @@ class GroupclothesAdmin(admin.ModelAdmin):
         'price',
         'discount',
         'valuediscount',
+        'nameimage',
         'image',
     )
     ordering= ['-idgroupclothes']
-    search_fields = ['type','idbrand__name', 'description']
+    search_fields = ['type','idbrand__name', 'description', 'nameimage']
     list_per_page = 20
 
 admin.site.register(Groupclothes, GroupclothesAdmin)
