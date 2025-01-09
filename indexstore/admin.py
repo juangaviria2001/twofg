@@ -49,15 +49,19 @@ class GroupclothesAdmin(admin.ModelAdmin):
         'idbrand',
         'type',
         'description',
-        'price',
         'discount',
         'valuediscount',
         'nameimage',
-        'image',
+        #'image',
+        'Foto',
+        'price',
     )
     ordering= ['-idgroupclothes']
     search_fields = ['type','idbrand__name', 'description', 'nameimage']
     list_per_page = 20
+    
+    def Foto(self, obj):
+        return format_html('<img src={} width="80" />', obj.image.url)
 
 admin.site.register(Groupclothes, GroupclothesAdmin)
                     
