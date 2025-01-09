@@ -227,7 +227,7 @@ class Groupclothes(models.Model):
     discount = models.BooleanField('¿Descuento?',default=False)
     valuediscount = models.IntegerField('Valor del decuento',blank=True, null=True,default=0)
     nameimage = models.CharField(max_length=150)
-    image = models.ImageField(upload_to='clothes/')
+    image = models.ImageField(upload_to='clothes/', )
 
     class Meta:
         managed = False
