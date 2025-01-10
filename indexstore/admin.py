@@ -36,16 +36,20 @@ class ClothesAdmin(admin.ModelAdmin):
         'idsede',
         'size',
         'color',
+        'barcode'
     )
     ordering= ['idgroupclothes']
     search_fields= ['idclothes','idgroupclothes__idgroupclothes']
     list_per_page= 20
+    def barcode(self, obj):
+        Barcode = str(obj.idgroupclothes)+ '-' + str(obj.idclothes)
+        return Barcode
 
 admin.site.register(Clothes, ClothesAdmin)
 
 class GroupclothesAdmin(admin.ModelAdmin):
     list_display = (
-        #'idgroupclothes',
+        'idgroupclothes',
         'idbrand',
         'type',
         'description',
