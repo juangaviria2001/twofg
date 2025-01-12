@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Groupclothes
 
 # Create your views here.
 
@@ -9,4 +10,5 @@ def catalog(request):
     return render(request, 'catalog.html')
 
 def products(request):
-    return render(request, 'products.html')
+    clothes = Groupclothes.objects.all()
+    return render(request, 'products.html', {'clothes': clothes})

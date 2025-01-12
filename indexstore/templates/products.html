@@ -78,4 +78,32 @@
 <br />
 <br />
 
+
+<div class="container">
+  <div class="row ">
+    {% for clothes in clothes %}
+    <div class="col col-sm-4">
+      <ul class="list-group list-group-numbered container">
+        <li class="">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://twofgstatics.s3.amazonaws.com/{{ clothes.image }}" class="img-fluid rounded-start" alt="imge" width="540">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ clothes.type }}</h5>
+                  <p class="card-text">{{ clothes.description }}</p>
+                  <p class="card-text"><small class="text-muted"> {{ clothes.price }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
 {% include 'footer.html' %}
