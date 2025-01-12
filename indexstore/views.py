@@ -12,3 +12,4 @@ def catalog(request):
 def products(request):
     clothes = Groupclothes.objects.all()
     return render(request, 'products.html', {'clothes': clothes})
+
