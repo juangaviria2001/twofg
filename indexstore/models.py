@@ -9,7 +9,7 @@ from django.db import models
 
 
 class Address(models.Model):
-    idaddress = models.AutoField('Direccion',primary_key=True)
+    idaddress = models.AutoField('Id Direccion',primary_key=True)
     general = models.CharField('I.General',max_length=255)
     name = models.CharField('Nombre de la direccion',max_length=50)
     description = models.CharField('Descripcion',max_length=150)
@@ -105,7 +105,7 @@ class Brands(models.Model):
     def __str__(self):
         idbrand = self.idbrand
         name = self.name
-        return str(idbrand)+ ' - ' + name
+        return name
 
 
 class Clients(models.Model):
@@ -133,7 +133,7 @@ class Clients(models.Model):
 
 
 class Clothes(models.Model):
-    idclothes = models.AutoField('Id de la prenda',primary_key=True)
+    idclothes = models.AutoField('Referencia unica',primary_key=True)
     idgroupclothes = models.ForeignKey('Groupclothes', models.DO_NOTHING, db_column='idgroupclothes')
     idsede = models.ForeignKey('Sedes', models.DO_NOTHING, db_column='idsede')
     salesClothesSizeEnum = [
@@ -203,7 +203,7 @@ class DjangoSession(models.Model):
 
 
 class Groupclothes(models.Model):
-    idgroupclothes = models.AutoField('Id',primary_key=True)
+    idgroupclothes = models.AutoField('Referencia unica',primary_key=True)
     idbrand = models.ForeignKey(Brands, models.DO_NOTHING, db_column='idbrand')
     GroupclothesEnum = [
         ("Camisa", "Camisa"),
@@ -227,7 +227,7 @@ class Groupclothes(models.Model):
     discount = models.BooleanField('¿Descuento?',default=False)
     valuediscount = models.IntegerField('Valor del decuento',blank=True, null=True,default=0)
     nameimage = models.CharField(max_length=150)
-    image = models.ImageField(upload_to='clothes/')
+    image = models.ImageField(upload_to='clothes/', )
 
     class Meta:
         managed = False
@@ -236,7 +236,7 @@ class Groupclothes(models.Model):
     def __str__(self):
         idgroupclothes = self.idgroupclothes
         type = self.type
-        return str(idgroupclothes)+ ' - '+ type
+        return str(idgroupclothes)
 
 
 class Sales(models.Model):

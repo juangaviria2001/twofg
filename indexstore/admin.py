@@ -36,28 +36,36 @@ class ClothesAdmin(admin.ModelAdmin):
         'idsede',
         'size',
         'color',
+        'barcode'
     )
     ordering= ['idgroupclothes']
     search_fields= ['idclothes','idgroupclothes__idgroupclothes']
     list_per_page= 20
+    def barcode(self, obj):
+        Barcode = str(obj.idgroupclothes)+ '-' + str(obj.idclothes)
+        return Barcode
 
 admin.site.register(Clothes, ClothesAdmin)
 
 class GroupclothesAdmin(admin.ModelAdmin):
     list_display = (
-        #'idgroupclothes',
+        'idgroupclothes',
         'idbrand',
         'type',
         'description',
-        'price',
         'discount',
         'valuediscount',
         'nameimage',
-        'image',
+        #'image',
+        'Foto',
+        'price',
     )
     ordering= ['-idgroupclothes']
     search_fields = ['type','idbrand__name', 'description', 'nameimage']
     list_per_page = 20
+    
+    def Foto(self, obj):
+        return format_html('<img src={} width="80" />', obj.image.url)
 
 admin.site.register(Groupclothes, GroupclothesAdmin)
                     
