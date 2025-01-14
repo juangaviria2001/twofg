@@ -1,7 +1,7 @@
 {% include 'bs5.html' %} {% include 'navbar.html' %}
 
 <br />
-<button
+{% comment %} <button
   class="btn btn-outline-info float-end"
   type="button"
   data-bs-toggle="offcanvas"
@@ -27,7 +27,6 @@
     ></button>
   </div>
   <div class="offcanvas-body">
-
     <div class="row g-3">
       <div class="col-sm-7">
         <label
@@ -75,7 +74,7 @@
   </div>
 </div>
 <br />
-<br />
+<br /> {% endcomment %}
 
 {%comment%} Primera parte {% endcomment %}
 <br />
@@ -83,43 +82,61 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/buzos.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/buzos.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Buzos</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <a href="products/"><button type="button" class="btn btn-outline-info">Ver</button></a>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Buzo" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/bolsos.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/bolsos.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Bolsos</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Bolso" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/camibuzos.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/camibuzos.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Camibuzos</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Camibuzo" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
@@ -128,43 +145,61 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/camisas.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/camisas.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Camisas</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Camisa" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/combos.png" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/combos.png"
+          class="card-img-top"
+        />
         <div class="card-body">
-          <h5 class="card-title">Combos</h5>
+          <h5 class="card-title">Conjuntos</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Conjunto" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/gorra2.jpg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/gorra2.jpg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Gorras</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Gorra" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
@@ -173,43 +208,61 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/jeans.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/jeans.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Jeans</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Jean" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/joggers.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/joggers.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Joggers</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Jogger" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/sueters.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/sueters.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Sueters</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Sueter" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
@@ -218,21 +271,29 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/zapatos.jpeg" class="card-img-top" />
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/zapatos.jpeg"
+          class="card-img-top"
+        />
         <div class="card-body">
           <h5 class="card-title">Zapatos</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Zapatos" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/ropainterior.png" class="card-img-top"
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/ropainterior.png"
+          class="card-img-top"
         />
         <div class="card-body">
           <h5 class="card-title">Ropa Interior</h5>
@@ -259,9 +320,7 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="ModalRILabel">
-                      Sexo
-                    </h5>
+                    <h5 class="modal-title" id="ModalRILabel">Sexo</h5>
                     <button
                       type="button"
                       class="btn-close"
@@ -270,8 +329,14 @@
                     ></button>
                   </div>
                   <div class="modal-body">
-                    <button type="button" class="btn btn-outline-primary">Hombre</button>
-                    <button type="button" class="btn btn-outline-danger">Mujer</button>
+                    <form action="products/" method="GET">
+                      <input type="hidden" name="clotheType" value="Ropa interior para hombre" />
+                      <button type="submit" class="btn btn-info">Hombre</button>
+                  </form>
+                  <form action="products/" method="GET">
+                    <input type="hidden" name="clotheType" value="Ropa interior para mujer" />
+                    <button type="submit" class="btn btn-danger">Mujer</button>
+                </form>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -292,16 +357,21 @@
     </div>
     <div class="col">
       <div class="card h-100 border-dark">
-        <img src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/accesorios.jpeg" class="card-img-top"
+        <img
+          src="https://twofgstatics.s3.us-east-2.amazonaws.com/clothes/accesorios.jpeg"
+          class="card-img-top"
         />
         <div class="card-body">
           <h5 class="card-title">Accesorios</h5>
           <p class="card-text"></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-info">Ver</button>
-          </small>
+          <form action="products/" method="GET">
+            <small class="text-muted">
+              <input type="hidden" name="clotheType" value="Accesorios" />
+              <button type="submit" class="btn btn-outline-info">Ver</button>
+            </small>
+          </form>
         </div>
       </div>
     </div>

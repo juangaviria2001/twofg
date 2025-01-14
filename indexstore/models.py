@@ -208,10 +208,12 @@ class Groupclothes(models.Model):
     GroupclothesEnum = [
         ("Camisa", "Camisa"),
         ("Camibuzo", "Camibuzo"),
+        ("Conjunto", "Conjunto"),
         ("Jogger", "Jogger"),
         ("Jean", "Jean"),
         ("Bermuda", "Bermuda"),
         ("Buzo", "Buzo"),
+        ("Bolso", "Bolso"),
         ("Chaleco", "Chaleco"),
         ("Abrigo", "Abrigo"),
         ("Sueter", "Sueter"),
