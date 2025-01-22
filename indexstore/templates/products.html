@@ -70,14 +70,43 @@
         />
       </div>
     </div>
+    <div class="row g-3">
+      <div class="col-sm-7">
+        <label
+          for="colFormLabelSm"
+          class="col-sm-2 col-form-label col-form-label-sm"
+          >Tipo de ropa</label
+        >
+        <fieldset disabled>
+        <select id="inputState" class="form-select disable">
+          <option selected> {{ clotheType }} </option>
+          {% comment %} <option>Camisa</option>
+          <option>Camibuzo</option>
+          <option>Conjunto</option>
+          <option>Jogger</option>
+          <option>Jean</option>
+          <option>Bermuda</option>
+          <option>Buzo</option>
+          <option>Bolso</option>
+          <option>Chaleco</option>
+          <option>Abrigo</option>
+          <option>Sueter</option>
+          <option>Gorra</option>
+          <option>Zapatos</option>
+          <option>Accesorios</option>
+          <option>Ropa interior para hombre</option>
+          <option>Ropa interior para mujer</option> {% endcomment %}
+        </select>
+      </fieldset>
+      </div>
     <div class="col-sm" data-bs-dismiss="offcanvas">
       <button type="submit" class="btn btn-success float-end">Buscar</button>
     </div>
   </div>
+  </div>
 </div>
 <br />
 <br />
-
 
 <div class="container">
   <div class="row ">
@@ -92,9 +121,9 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{ clothes.type }}</h5>
-                  <p class="card-text">{{ clothes.description }}</p>
-                  <p class="card-text"><small class="text-muted"> {{ clothes.price }}</small></p>
+                  <h5 class="card-title">{{ clothes.description }}</h5>
+                  <p class="card-text"> Marca: {{ clothes.idbrand }}</p>
+                  <p class="card-text float-end"><small class="text-muted">Precio: ${{ clothes.price }}</small></p>
                 </div>
               </div>
             </div>
